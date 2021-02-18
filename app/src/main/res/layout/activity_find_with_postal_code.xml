@@ -98,21 +98,10 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--Base Loading-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/baseLoading"
-        android:visibility="visible"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <!--Base Result-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/baseResult"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="97dp"

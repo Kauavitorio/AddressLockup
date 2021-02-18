@@ -3,29 +3,17 @@ package com.example.findaddress.Threads;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.AsyncTask;
-import android.view.View;
 import android.widget.TextView;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
-
-import com.example.findaddress.Classes.LoadingDialog;
-import com.example.findaddress.Find_with_postal_code;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.jar.JarException;
-
 public class AsyncCEP extends AsyncTask {
-    ConstraintLayout baseResult, baseSearch, baseLoading;
     @SuppressLint("StaticFieldLeak")
     TextView txt_address_cep, txt_complement_cep, txt_district_cep, txt_localidade_cep,txt_state_cep, txt_ibge_cep, txt_gia_cep, txt_ddd_cep, txt_siafi_cep;
     String cep;
 
-    public AsyncCEP(ConstraintLayout baseResult, ConstraintLayout baseSearch, ConstraintLayout baseLoading, TextView txt_address_cep, TextView txt_complement_cep, TextView txt_district_cep, TextView txt_localidade_cep, TextView txt_state_cep, TextView txt_ibge_cep, TextView txt_gia_cep, TextView txt_ddd_cep, TextView txt_siafi_cep, String cep ) {
-        this.baseResult = baseResult;
-        this.baseSearch = baseSearch;
-        this.baseLoading = baseLoading;
+    public AsyncCEP(TextView txt_address_cep, TextView txt_complement_cep, TextView txt_district_cep, TextView txt_localidade_cep, TextView txt_state_cep, TextView txt_ibge_cep, TextView txt_gia_cep, TextView txt_ddd_cep, TextView txt_siafi_cep, String cep ) {
         this.txt_address_cep = txt_address_cep;
         this.txt_complement_cep = txt_complement_cep;
         this.txt_district_cep = txt_district_cep;
@@ -38,11 +26,20 @@ public class AsyncCEP extends AsyncTask {
         this.cep = cep;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        baseSearch.setVisibility(View.GONE);
-
+        String carregando = "Carregando...";
+        txt_address_cep.setText("Endereço: " + carregando);
+        txt_complement_cep.setText("Complemento: " + carregando);
+        txt_district_cep.setText("Bairro: " + carregando);
+        txt_localidade_cep.setText("Localidade: " + carregando);
+        txt_state_cep.setText("Estado: " + carregando);
+        txt_ibge_cep.setText("IBGE: " + carregando);
+        txt_gia_cep.setText("GIA: " + carregando);
+        txt_ddd_cep.setText("DDD: " + carregando);
+        txt_siafi_cep.setText("SIAFI: " + carregando);
     }
 
     @Override
@@ -69,4 +66,6 @@ public class AsyncCEP extends AsyncTask {
             e.printStackTrace();
         }
     }
+
 }
+

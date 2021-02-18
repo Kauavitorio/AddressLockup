@@ -5,12 +5,15 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.findaddress.Classes.MaskEditUtil;
 import com.example.findaddress.Threads.AsyncCEP;
@@ -19,8 +22,8 @@ public class Find_with_postal_code extends AppCompatActivity {
     TextView txt_aguardando_cep, txt_resultOf;
     TextView txt_address_cep, txt_complement_cep, txt_district_cep, txt_localidade_cep,txt_state_cep, txt_ibge_cep, txt_gia_cep, txt_ddd_cep, txt_siafi_cep;
     EditText edittext_CEP;
-    CardView cardBtnSearch;
-    ConstraintLayout baseSearch, baseResult, baseLoading;
+    CardView cardBtnSearch, cardBtnGoBack, cardBtnNewSearch;
+    ConstraintLayout baseSearch, baseResult;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -30,8 +33,9 @@ public class Find_with_postal_code extends AppCompatActivity {
         txt_aguardando_cep = findViewById(R.id.txt_aguardando_cep);
         edittext_CEP = findViewById(R.id.edittext_CEP);
         cardBtnSearch = findViewById(R.id.cardBtnSearch);
+        cardBtnGoBack = findViewById(R.id.cardBtnGoBack);
+        cardBtnNewSearch = findViewById(R.id.cardBtnNewSearch);
         baseSearch = findViewById(R.id.baseSearch);
-        baseLoading = findViewById(R.id.baseLoading);
         baseResult = findViewById(R.id.baseResult);
         txt_address_cep = findViewById(R.id.txt_address_cep);
         txt_complement_cep = findViewById(R.id.txt_complement_cep);
@@ -44,10 +48,10 @@ public class Find_with_postal_code extends AppCompatActivity {
         txt_siafi_cep = findViewById(R.id.txt_siafi_cep);
         txt_resultOf = findViewById(R.id.txt_resultOf);
         edittext_CEP.addTextChangedListener(MaskEditUtil.mask(edittext_CEP, MaskEditUtil.FORMAT_CEP));
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         baseSearch.setVisibility(View.VISIBLE);
         baseResult.setVisibility(View.GONE);
-        baseLoading.setVisibility(View.GONE);
 
         edittext_CEP.addTextChangedListener(new TextWatcher() {
             @Override
@@ -75,53 +79,46 @@ public class Find_with_postal_code extends AppCompatActivity {
         cardBtnSearch.setOnClickListener(v -> {
             if (edittext_CEP.getText().length() == 9){
                 String cep = edittext_CEP.getText().toString();
-                AsyncCEP asyncCEP = new AsyncCEP(baseResult, baseSearch, baseLoading,txt_address_cep, txt_complement_cep, txt_district_cep , txt_localidade_cep, txt_state_cep, txt_ibge_cep, txt_gia_cep, txt_ddd_cep, txt_siafi_cep, cep);
+                AsyncCEP asyncCEP = new AsyncCEP(txt_address_cep, txt_complement_cep, txt_district_cep , txt_localidade_cep, txt_state_cep, txt_ibge_cep, txt_gia_cep, txt_ddd_cep, txt_siafi_cep, cep);
                 asyncCEP.execute();
                 baseResult.setVisibility(View.VISIBLE);
                 baseSearch.setVisibility(View.GONE);
                 txt_resultOf.setText("Esses são os resultados de: "+ cep);
+                imm.hideSoftInputFromWindow(edittext_CEP.getWindowToken(), 0);
             }else{
-
+                Toast.makeText(this, "CEP preenchido incorretamente!!", Toast.LENGTH_SHORT).show();
+                edittext_CEP.requestFocus();
+                imm.showSoftInput(edittext_CEP, InputMethodManager.SHOW_IMPLICIT);
             }
         });
+
+        cardBtnNewSearch.setOnClickListener(v -> LimparTudo());
+
+        cardBtnGoBack.setOnClickListener(v -> finish());
     }
 
-    public class AguardandoCep extends Thread{
-        @SuppressLint("SetTextI18n")
-        @Override
-        public void run() {
-            super.run();
-            for (int i = 0; i < 4;i++){
-                if (i == 1){
-                    try {
-                        Thread.sleep(600);
-                        runOnUiThread(() -> {
-                            txt_aguardando_cep.setText("Aguardando CEP.");
-                        });
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }else if (i == 2){
-                    try {
-                        Thread.sleep(600);
-                        runOnUiThread(() -> {
-                            txt_aguardando_cep.setText("Aguardando CEP..");
-                        });
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }else if (i == 3){
-                    try {
-                        Thread.sleep(600);
-                        runOnUiThread(() -> {
-                            txt_aguardando_cep.setText("Aguardando CEP...");
-                        });
-                        i = 0;
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
+    @SuppressLint("SetTextI18n")
+    public void LimparTudo(){
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        txt_aguardando_cep.setText("Aguardando CEP");
+        edittext_CEP.setText(null);
+        txt_address_cep.setText("Endereço: ");
+        txt_complement_cep.setText("Complemento:");
+        txt_district_cep.setText("Bairro: ");
+        txt_localidade_cep.setText("Localidade: ");
+        txt_state_cep.setText("Estado: ");
+        txt_ibge_cep.setText("IBGE: ");
+        txt_gia_cep.setText("GIA: ");
+        txt_ddd_cep.setText("DDD: ");
+        txt_siafi_cep.setText("SIAFI: ");
+        baseResult.setVisibility(View.GONE);
+        baseSearch.setVisibility(View.VISIBLE);
+        edittext_CEP.requestFocus();
+        imm.showSoftInput(edittext_CEP, InputMethodManager.SHOW_IMPLICIT);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
