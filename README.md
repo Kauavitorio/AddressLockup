@@ -8,4 +8,4 @@
 • Kauã Vitorio
 <br/>
 <h1>Splash Screen</h1>
-<img src="https://cdn.discordapp.com/attachments/756546249901211749/811837165847183370/splashback.png">
+<img width="200px" src="https://cdn.discordapp.com/attachments/756546249901211749/811837165847183370/splashback.png">
