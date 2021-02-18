@@ -20,6 +20,12 @@ import com.example.findaddress.Threads.AsyncCEP;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ *  Copyright (c) 2021 Kaua Vitorio
+ *  Official repository https://github.com/Kauavitorio/AddressLockup
+ *  Responsible developer: https://github.com/Kauavitorio
+ **/
+
 public class Find_with_postal_code extends AppCompatActivity {
     TextView txt_aguardando_cep, txt_resultOf;
     TextView txt_address_cep, txt_complement_cep, txt_district_cep, txt_localidade_cep,txt_state_cep, txt_ibge_cep, txt_gia_cep, txt_ddd_cep, txt_siafi_cep;
