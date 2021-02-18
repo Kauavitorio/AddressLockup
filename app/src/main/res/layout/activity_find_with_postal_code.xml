@@ -17,6 +17,7 @@
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="0dp">
 
+        <!--TextView Waiting for zipcode-->
         <TextView
             android:id="@+id/txt_aguardando_cep"
             android:layout_width="wrap_content"
@@ -48,6 +49,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_aguardando_cep" />
 
+        <!--CardViewBtn Search-->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardBtnSearch"
             android:layout_width="200dp"
@@ -58,10 +60,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edittext_CEP">
 
+            <!--Base Contender-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <!--Sub CardView-->
                 <androidx.cardview.widget.CardView
                     android:layout_width="195dp"
                     android:layout_height="45dp"
@@ -72,10 +76,12 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" >
 
+                    <!--Base for TextView-->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
+                        <!--TextView Search-->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -107,6 +113,7 @@
         tools:layout_editor_absoluteX="97dp"
         tools:layout_editor_absoluteY="16dp">
 
+        <!--TextView "those are the results of"-->
         <TextView
             android:id="@+id/txt_resultOf"
             android:layout_width="wrap_content"
@@ -120,6 +127,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!--TextView "Address"-->
         <TextView
             android:id="@+id/txt_address_cep"
             android:layout_width="wrap_content"
@@ -131,6 +139,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_resultOf" />
 
+        <!--TextView "complements"-->
         <TextView
             android:id="@+id/txt_complement_cep"
             android:layout_width="wrap_content"
@@ -142,6 +151,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_address_cep" />
 
+        <!--TextView "neighborhoods"-->
         <TextView
             android:id="@+id/txt_district_cep"
             android:layout_width="wrap_content"
@@ -153,7 +163,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_complement_cep" />
 
-
+        <!--TextView "locality"-->
         <TextView
             android:id="@+id/txt_localidade_cep"
             android:layout_width="wrap_content"
@@ -165,6 +175,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_district_cep" />
 
+        <!--TextView "State"-->
         <TextView
             android:id="@+id/txt_state_cep"
             android:layout_width="wrap_content"
@@ -176,6 +187,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_localidade_cep" />
 
+        <!--TextView "IBGE"-->
         <TextView
             android:id="@+id/txt_ibge_cep"
             android:layout_width="wrap_content"
@@ -187,6 +199,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_state_cep" />
 
+        <!--TextView "GIA"-->
         <TextView
             android:id="@+id/txt_gia_cep"
             android:layout_width="wrap_content"
@@ -198,6 +211,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_ibge_cep" />
 
+        <!--TextView "DDD"-->
         <TextView
             android:id="@+id/txt_ddd_cep"
             android:layout_width="wrap_content"
@@ -209,6 +223,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_gia_cep" />
 
+        <!--TextView "SIAFI"-->
         <TextView
             android:id="@+id/txt_siafi_cep"
             android:layout_width="wrap_content"
@@ -231,10 +246,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_siafi_cep">
 
+            <!--Base Contender-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <!--Sub CardView-->
                 <androidx.cardview.widget.CardView
                     android:layout_width="155dp"
                     android:layout_height="45dp"
@@ -245,10 +262,12 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
+                    <!--Contender for TextView-->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
+                        <!--TextView New Search-->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -280,10 +299,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_siafi_cep">
 
+            <!--Main Contender-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <!--Sub CardView-->
                 <androidx.cardview.widget.CardView
                     android:layout_width="155dp"
                     android:layout_height="45dp"
@@ -294,10 +315,12 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
+                    <!--Contender for TextView-->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
+                        <!--TextView Go Back-->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
