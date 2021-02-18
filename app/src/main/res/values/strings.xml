@@ -1,6 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Find Address</string>
 
+    <!--
+    *  Copyright (c) 2021 Kaua Vitorio
+    *  Official repository https://github.com/Kauavitorio/AddressLockup
+    *  Responsible developer: https://github.com/Kauavitorio
+    -->
+
     <!--Error-->
     <string name="alerterror">There was an error, please check the reported zip code. If the error persists, contact the developer.</string>
 
@@ -14,6 +20,7 @@
     <string name="gia">GIA :</string>
     <string name="ddd">DDD:</string>
     <string name="siafi">SIAFI:</string>
+    <string name="complementNotSpecified">Complement: * Not specified *</string>
 
     <!--Buttons-->
     <string name="newsearch">New search</string>
@@ -29,3 +36,9 @@
     <string name="search">Search</string>
     <string name="result_of">These are the results of:</string>
    </resources>
+
+    <!--
+        *  Copyright (c) 2021 Kaua Vitorio
+        *  Official repository https://github.com/Kauavitorio/AddressLockup
+        *  Responsible developer: https://github.com/Kauavitorio
+        -->

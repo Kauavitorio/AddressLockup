@@ -8,6 +8,12 @@
     android:padding="5dp"
     tools:context=".Find_with_postal_code">
 
+    <!--
+    *  Copyright (c) 2021 Kaua Vitorio
+    *  Official repository https://github.com/Kauavitorio/AddressLockup
+    *  Responsible developer: https://github.com/Kauavitorio
+    -->
+
     <!--Base Search-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/baseSearch"
@@ -336,12 +342,16 @@
 
                 </androidx.cardview.widget.CardView>
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+        *  Copyright (c) 2021 Kaua Vitorio
+        *  Official repository https://github.com/Kauavitorio/AddressLockup
+        *  Responsible developer: https://github.com/Kauavitorio
+        -->
