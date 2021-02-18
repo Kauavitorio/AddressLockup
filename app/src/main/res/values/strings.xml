@@ -4,4 +4,6 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="tentarnovamente">Tentar Novamente</string>
+    <string name="findforaddress">Buscar\nPor\nEndereço</string>
+    <string name="findforpostalcode">Buscar\nPor\nCep</string>
 </resources>
