@@ -1,25 +1,44 @@
-<resources>
-    <string name="app_name">FindAddress</string>
-    <string name="title_activity_splash">FullscreenActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="tentarnovamente">Tentar Novamente</string>
-    <string name="findforaddress">Buscar\nPor\nEndereço</string>
-    <string name="findforpostalcode">Buscar\nPor\nCep</string>
-    <string name="insertpostalcodehere">Insira o CEP aqui</string>
-    <string name="aguardando_cep">Aguardando CEP</string>
-    <string name="search">Pesquisar</string>
-    <string name="result_of">Esses são os resultados de:</string>
-    <string name="address">Endereço:</string>
-    <string name="complement">Complemento:</string>
-    <string name="district">Bairro:</string>
-    <string name="localidade">Localidade:</string>
-    <string name="state">Estado:</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Find Address</string>
+
+    <!--
+    *  Copyright (c) 2021 Kaua Vitorio
+    *  Official repository https://github.com/Kauavitorio/AddressLockup
+    *  Responsible developer: https://github.com/Kauavitorio
+    -->
+
+    <!--Error-->
+    <string name="alerterror">There was an error, please check the reported zip code. If the error persists, contact the developer.</string>
+
+    <!--Result-->
+    <string name="address">"Address: "</string>
+    <string name="complement">"Complement: "</string>
+    <string name="district">"District: "</string>
+    <string name="localidade">Locality:</string>
+    <string name="state">State:</string>
     <string name="ibge">IBGE:</string>
     <string name="gia">GIA :</string>
     <string name="ddd">DDD:</string>
     <string name="siafi">SIAFI:</string>
-    <string name="newsearch">Nova Pesquisa</string>
-    <string name="goback">Voltar</string>
-    <string name="carregando">Loading..</string>
-</resources>
+    <string name="complementNotSpecified">Complement: * Not specified *</string>
+
+    <!--Buttons-->
+    <string name="newsearch">New search</string>
+    <string name="goback">Go Back</string>
+
+    <!--Tools-->
+    <string name="tentarnovamente">Try again</string>
+    <string name="carregando" tools:ignore="TypographyEllipsis">Loading...</string>
+    <string name="findforaddress">Search By Address</string>
+    <string name="findforpostalcode">Search by zip code</string>
+    <string name="insertpostalcodehere">Enter zip code here</string>
+    <string name="aguardando_cep">Waiting for zip code</string>
+    <string name="search">Search</string>
+    <string name="result_of">These are the results of:</string>
+   </resources>
+
+    <!--
+        *  Copyright (c) 2021 Kaua Vitorio
+        *  Official repository https://github.com/Kauavitorio/AddressLockup
+        *  Responsible developer: https://github.com/Kauavitorio
+        -->

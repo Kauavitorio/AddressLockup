@@ -1,14 +1,18 @@
 package com.example.findaddress.Threads;
 
-import android.app.Activity;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+/**
+ *  Copyright (c) 2021 Kaua Vitorio
+ *  Official repository https://github.com/Kauavitorio/AddressLockup
+ *  Responsible developer: https://github.com/Kauavitorio
+ **/
 
 public class JsonHandler {
 
@@ -26,8 +30,8 @@ public class JsonHandler {
                 text_json += "\n"+linha;
             }
         } catch (Exception e) {
-            //Toast.makeText(activity, "Ouve um erro, por favor, verificar o cep informado\nCaso o erro persista, contate o desenvolvedor", Toast.LENGTH_LONG).show();
             Log.d("ErroNetwork",e.toString());
+            e.printStackTrace();
         }
 
         return text_json;

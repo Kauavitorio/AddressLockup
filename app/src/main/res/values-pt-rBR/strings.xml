@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Encontrar endereço</string>
+    <string name="tentarnovamente">Tentar Novamente</string>
+    <string name="findforaddress">Buscar Por Endereço</string>
+    <string name="findforpostalcode">Buscar Por Cep</string>
+    <string name="insertpostalcodehere">Insira o CEP aqui</string>
+    <string name="aguardando_cep">Aguardando CEP</string>
+    <string name="search">Pesquisar</string>
+    <string name="result_of">Esses são os resultados de:</string>
+    <string name="address">Endereço:</string>
+    <string name="complement">Complemento:</string>
+    <string name="district">Bairro:</string>
+    <string name="localidade">Localidade:</string>
+    <string name="state">Estado:</string>
+    <string name="ibge">IBGE:</string>
+    <string name="gia">GIA :</string>
+    <string name="ddd">DDD:</string>
+    <string name="siafi">SIAFI:</string>
+    <string name="newsearch">Nova Pesquisa</string>
+    <string name="goback">Voltar</string>
+    <string name="carregando">Carregando ..</string>
+    <string name="alerterror">Houve um erro, Por favor, verificar o cep informado Caso o erro persista, contate o desenvolvedor.</string>
+    <string name="complementNotSpecified">Complemento: *Não especificado*</string>
+</resources>

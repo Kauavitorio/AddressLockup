@@ -13,25 +13,25 @@ import com.example.findaddress.R;
  *  Responsible developer: https://github.com/Kauavitorio
  **/
 
-public class LoadingDialog {
+public class AlertError {
 
     private final Activity activity;
     private AlertDialog dialog;
 
-    public LoadingDialog(Activity myactivity){
+    public AlertError(Activity myactivity){
         activity = myactivity;
     }
 
-    @SuppressLint("InflateParams")
+    @SuppressLint({"InflateParams", "SetTextI18n"})
     public void  startLoading(){
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
         LayoutInflater inflater = activity.getLayoutInflater();
-        builder.setView(inflater.inflate(R.layout.custom_loading,null));
-        builder.setCancelable(false);
+        builder.setView(inflater.inflate(R.layout.custom_error,null));
 
         dialog = builder.create();
         dialog.show();
+
     }
 
    public void dimissDialog(){
