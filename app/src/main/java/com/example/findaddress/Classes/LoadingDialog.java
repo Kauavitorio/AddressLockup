@@ -7,6 +7,12 @@ import android.view.LayoutInflater;
 
 import com.example.findaddress.R;
 
+/**
+ *  Copyright (c) 2021 Kaua Vitorio
+ *  Official repository https://github.com/Kauavitorio/AddressLockup
+ *  Responsible developer: https://github.com/Kauavitorio
+ **/
+
 public class LoadingDialog {
 
     private final Activity activity;
@@ -22,6 +28,7 @@ public class LoadingDialog {
 
         LayoutInflater inflater = activity.getLayoutInflater();
         builder.setView(inflater.inflate(R.layout.custom_loading,null));
+        builder.setCancelable(false);
 
         dialog = builder.create();
         dialog.show();
