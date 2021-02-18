@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         BtnFindForPostalCode.setOnClickListener(v -> {
             Intent goTo_findwithpostalCode = new Intent(MainActivity.this, Find_with_postal_code.class);
+            startActivity(goTo_findwithpostalCode);
         });
 
     }
