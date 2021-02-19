@@ -54,7 +54,7 @@ public class SplashActivity extends AppCompatActivity {
         public void run() {
             super.run();
             for (int i = 0; i < 91; i++) {
-                int loading = 10;
+                int loading = 14;
                 try {
                     Thread.sleep(loading);
                     progressSplash.setProgress(i);
