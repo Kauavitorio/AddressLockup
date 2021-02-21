@@ -22,4 +22,10 @@
     <string name="carregando">Carregando ..</string>
     <string name="alerterror">Houve um erro, Por favor, verificar o cep informado Caso o erro persista, contate o desenvolvedor.</string>
     <string name="complementNotSpecified">Complemento: *Não especificado*</string>
+    <string name="aguardando_end">Esperando endereço</string>
+    <string name="insertstatehere">Insira o estado aqui</string>
+    <string name="insertcityhere">Insira a cidade aqui</string>
+    <string name="insertstreethere">Insira a rua aqui</string>
+    <string name="indevelopment">Em desenvolvimento</string>
+    <string name="viewinmap">Ver no mapa</string>
 </resources>

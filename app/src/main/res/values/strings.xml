@@ -35,7 +35,17 @@
     <string name="aguardando_cep">Waiting for zip code</string>
     <string name="search">Search</string>
     <string name="result_of">These are the results of:</string>
-   </resources>
+    <string name="aguardando_end">Waiting for address</string>
+    <string name="insertstatehere">Enter the state here</string>
+    <string name="insertcityhere">Enter the city here</string>
+    <string name="insertstreethere">Enter the street here</string>
+    <string name="exsp" translatable="false">Ex. SP</string>
+    <string name="exsaopaulo" translatable="false">Ex. São Paulo</string>
+    <string name="exsaodomingos" translatable="false">Ex. Rua São Domingos</string>
+    <string name="indevelopment">In development</string>
+    <string name="viewinmap">View in map</string>
+    <string name="title_activity_maps" translatable="false">Map</string>
+</resources>
 
     <!--
         *  Copyright (c) 2021 Kaua Vitorio

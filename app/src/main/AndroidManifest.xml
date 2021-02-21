@@ -7,9 +7,10 @@
     *  Official repository https://github.com/Kauavitorio/AddressLockup
     *  Responsible developer: https://github.com/Kauavitorio
     -->
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -18,7 +19,13 @@
         android:roundIcon="@mipmap/ic_launcher_beta_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FindAddress">
-        <activity android:name=".Find_with_postal_code"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".Find_with_postal_code" />
         <activity android:name=".Find_with_address" />
         <activity android:name=".SplashActivity">
             <intent-filter>
@@ -29,10 +36,5 @@
         </activity>
         <activity android:name=".MainActivity" />
     </application>
-</manifest>
 
-    <!--
-        *  Copyright (c) 2021 Kaua Vitorio
-        *  Official repository https://github.com/Kauavitorio/AddressLockup
-        *  Responsible developer: https://github.com/Kauavitorio
-        -->
+</manifest>

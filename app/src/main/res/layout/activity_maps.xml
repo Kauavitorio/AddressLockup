@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_height="70dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/btnGoBack"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            app:lottie_rawRes="@raw/arrowleftback"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"/>
+
+    </LinearLayout>
+
+    <fragment
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+</LinearLayout>
