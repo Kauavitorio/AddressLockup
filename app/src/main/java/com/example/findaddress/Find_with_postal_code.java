@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -30,8 +31,9 @@ public class Find_with_postal_code extends AppCompatActivity {
     TextView txt_aguardando_cep, txt_resultOf;
     TextView txt_address_cep, txt_complement_cep, txt_district_cep, txt_localidade_cep,txt_state_cep, txt_ibge_cep, txt_gia_cep, txt_ddd_cep, txt_siafi_cep;
     EditText edittext_CEP;
-    CardView cardBtnSearch, cardBtnGoBack, cardBtnNewSearch;
+    CardView cardBtnSearch, cardBtnGoBack, cardBtnNewSearch, cardViewBtn_viewinmap;
     ConstraintLayout baseSearch, baseResult;
+    String zipcode;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -69,7 +71,7 @@ public class Find_with_postal_code extends AppCompatActivity {
         });
 
         cardBtnSearch.setOnClickListener(v -> {
-            String zipcode = edittext_CEP.getText().toString();
+            zipcode = edittext_CEP.getText().toString();
             Pattern pattern_zipcode = Pattern.compile("(^\\d{5}-\\d{3}|^\\d{2}.\\d{3}-\\d{3}|\\d{8})");
             Matcher matcher = pattern_zipcode.matcher(zipcode);
             if(zipcode.equals("")){
@@ -84,7 +86,7 @@ public class Find_with_postal_code extends AppCompatActivity {
                 edittext_CEP.requestFocus();
             } else {
                 // If everything is OK perform the action here.
-                AsyncCEP asyncCEP = new AsyncCEP(Find_with_postal_code.this, txt_address_cep, txt_complement_cep, txt_district_cep , txt_localidade_cep, txt_state_cep, txt_ibge_cep, txt_gia_cep, txt_ddd_cep, txt_siafi_cep, zipcode);
+                AsyncCEP asyncCEP = new AsyncCEP(Find_with_postal_code.this, cardViewBtn_viewinmap,txt_address_cep, txt_complement_cep, txt_district_cep , txt_localidade_cep, txt_state_cep, txt_ibge_cep, txt_gia_cep, txt_ddd_cep, txt_siafi_cep, zipcode);
                 asyncCEP.execute();
                 baseResult.setVisibility(View.VISIBLE);
                 baseSearch.setVisibility(View.GONE);
@@ -109,6 +111,12 @@ public class Find_with_postal_code extends AppCompatActivity {
         cardBtnNewSearch.setOnClickListener(v -> LimparTudo());
 
         cardBtnGoBack.setOnClickListener(v -> finish());
+
+        cardViewBtn_viewinmap.setOnClickListener(v -> {
+            Intent goTo_map = new Intent(Find_with_postal_code.this,MapsActivity.class);
+            goTo_map.putExtra("zipcode", zipcode);
+            startActivity(goTo_map);
+        });
     }
 
     @SuppressLint("SetTextI18n")
@@ -128,6 +136,7 @@ public class Find_with_postal_code extends AppCompatActivity {
         ShowTextResult();
         baseResult.setVisibility(View.GONE);
         baseSearch.setVisibility(View.VISIBLE);
+        cardViewBtn_viewinmap.setVisibility(View.VISIBLE);
         edittext_CEP.requestFocus();
         imm.showSoftInput(edittext_CEP, InputMethodManager.SHOW_IMPLICIT);
     }
@@ -167,5 +176,6 @@ public class Find_with_postal_code extends AppCompatActivity {
         txt_ddd_cep = findViewById(R.id.txt_ddd_cep);
         txt_siafi_cep = findViewById(R.id.txt_siafi_cep);
         txt_resultOf = findViewById(R.id.txt_resultOf);
+        cardViewBtn_viewinmap = findViewById(R.id.cardViewBtn_viewinmap);
     }
 }

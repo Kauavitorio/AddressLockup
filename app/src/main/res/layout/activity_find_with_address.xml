@@ -4,6 +4,211 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000"
     tools:context=".Find_with_address">
+
+    <!--Base Search-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/baseSearch"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <!--TextView Waiting for address-->
+        <TextView
+            android:id="@+id/txt_aguardando_cep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:text="@string/aguardando_end"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--TextView insert for state-->
+        <TextView
+            android:id="@+id/txt_insertstate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/insertstatehere"
+            android:textColor="#fff"
+            android:textSize="17sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_aguardando_cep" />
+
+        <!--EditText Ex State-->
+        <EditText
+            android:id="@+id/edittext_state"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/molduraedittexte"
+            android:hint="@string/exsp"
+            android:maxLength="2"
+            android:importantForAutofill="no"
+            android:inputType="textPostalAddress"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="17sp"
+            android:visibility="visible"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_insertstate" />
+
+        <!--TextView insert for city-->
+        <TextView
+            android:id="@+id/txt_insertcity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/insertcityhere"
+            android:textColor="#fff"
+            android:textSize="17sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_state" />
+
+        <!--EditText Ex city-->
+        <EditText
+            android:id="@+id/edittext_city"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/molduraedittexte"
+            android:hint="@string/exsaopaulo"
+            android:maxLength="30"
+            android:importantForAutofill="no"
+            android:inputType="textPostalAddress"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="17sp"
+            android:visibility="visible"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_insertcity" />
+
+        <!--TextView insert for street-->
+        <TextView
+            android:id="@+id/txt_insertstreet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/insertstreethere"
+            android:textColor="#fff"
+            android:textSize="17sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_city" />
+
+        <!--EditText Ex street-->
+        <EditText
+            android:id="@+id/edittext_street"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/molduraedittexte"
+            android:hint="@string/exsaodomingos"
+            android:importantForAutofill="no"
+            android:inputType="textPostalAddress"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="17sp"
+            android:visibility="visible"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_insertstreet" />
+
+        <!--CardViewBtn Search-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardBtnSearch"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_street">
+
+            <!--Base Contender-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--Sub CardView-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="195dp"
+                    android:layout_height="45dp"
+                    app:cardBackgroundColor="#000"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" >
+
+                    <!--Base for TextView-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!--TextView Search-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/search"
+                            android:textColor="#fff"
+                            android:textSize="25sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--Base Result-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <!--TextView ResultOf-->
+        <TextView
+            android:id="@+id/txt_resultOf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@string/result_of"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/listView_Result"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="match_parent">
+
+        </ListView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

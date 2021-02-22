@@ -7,9 +7,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+
 import com.example.findaddress.Classes.AlertError;
 import com.example.findaddress.Classes.LoadingDialog;
 import com.example.findaddress.R;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 
 import org.json.JSONObject;
 
@@ -24,11 +27,13 @@ public class AsyncCEP extends AsyncTask {
     TextView txt_address_cep, txt_complement_cep, txt_district_cep, txt_localidade_cep,txt_state_cep, txt_ibge_cep, txt_gia_cep, txt_ddd_cep, txt_siafi_cep;
     String cep;
     @SuppressLint("StaticFieldLeak")
+    CardView cardViewBtn_viewinmap;
+    @SuppressLint("StaticFieldLeak")
     Activity activity;
     LoadingDialog loadingDialog;
     AlertError alertError;
 
-    public AsyncCEP(Activity activity, TextView txt_address_cep, TextView txt_complement_cep, TextView txt_district_cep, TextView txt_localidade_cep, TextView txt_state_cep, TextView txt_ibge_cep, TextView txt_gia_cep, TextView txt_ddd_cep, TextView txt_siafi_cep, String cep ) {
+    public AsyncCEP(Activity activity, CardView cardViewBtn_viewinmap,TextView txt_address_cep, TextView txt_complement_cep, TextView txt_district_cep, TextView txt_localidade_cep, TextView txt_state_cep, TextView txt_ibge_cep, TextView txt_gia_cep, TextView txt_ddd_cep, TextView txt_siafi_cep, String cep ) {
         this.txt_address_cep = txt_address_cep;
         this.txt_complement_cep = txt_complement_cep;
         this.txt_district_cep = txt_district_cep;
@@ -40,6 +45,7 @@ public class AsyncCEP extends AsyncTask {
         this.txt_siafi_cep = txt_siafi_cep;
         this.cep = cep;
         this.activity = activity;
+        this.cardViewBtn_viewinmap = cardViewBtn_viewinmap;
         loadingDialog = new LoadingDialog(activity);
         alertError = new AlertError(activity);
     }
@@ -98,6 +104,7 @@ public class AsyncCEP extends AsyncTask {
             txt_gia_cep.setVisibility(View.GONE);
             txt_ddd_cep.setVisibility(View.GONE);
             txt_siafi_cep.setVisibility(View.GONE);
+            cardViewBtn_viewinmap.setVisibility(View.GONE);
             Log.d("ErrorNetWork",e.toString());
             e.printStackTrace();
         }
