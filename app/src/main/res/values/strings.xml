@@ -45,6 +45,8 @@
     <string name="indevelopment">In development</string>
     <string name="viewinmap">View in map</string>
     <string name="title_activity_maps" translatable="false">Map</string>
+    <string name="viewmap">View Map</string>
+    <string name="more">More</string>
 </resources>
 
     <!--

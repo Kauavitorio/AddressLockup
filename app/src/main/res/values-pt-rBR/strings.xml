@@ -28,4 +28,6 @@
     <string name="insertstreethere">Insira a rua aqui</string>
     <string name="indevelopment">Em desenvolvimento</string>
     <string name="viewinmap">Ver no mapa</string>
+    <string name="viewmap">Ver mapa</string>
+    <string name="more">Mais</string>
 </resources>
